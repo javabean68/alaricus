@@ -6,7 +6,7 @@ import thinkplot
 import thinkstats2
 
 def read_statistics(year):
-    draws = pd.read_csv('./euromillions-past-draws-archive' + str(year) +'.txt', skiprows=2, usecols=[1,2,3,4,5],  sep = '\t', names=['1','2','3','4','5'])
+    draws = pd.read_csv('./euromillions-past-draws-archive/euromillions-past-draws-archive' + str(year) +'.txt', skiprows=2, usecols=[1,2,3,4,5],  sep = '\t', names=['1','2','3','4','5'])
     return draws.iloc[::-1]    
     
 
