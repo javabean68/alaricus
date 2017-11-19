@@ -5,11 +5,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def read_statistics(lastYear, initialYear):
-    draws = pd.read_csv('../euromillions-past-draws-archive/euromillions-past-draws-archive' + str(lastYear) +'.txt', skiprows=2, usecols=[1,2,3,4,5],  sep = '\t')
+    draws = pd.read_csv('../euromillions-past-draws-archive/euromillions-past-draws-archive' + str(lastYear) +'.txt', skiprows=2, usecols=[1,2,3,4,5,6,7],  sep = '\t')
         
     for year in range(lastYear, initialYear, -1):
         
-        draws = draws.append(pd.read_csv('../euromillions-past-draws-archive/euromillions-past-draws-archive' + str(year) +'.txt', skiprows=2, usecols=[1,2,3,4,5],  sep = '\t'))
+        draws = draws.append(pd.read_csv('../euromillions-past-draws-archive/euromillions-past-draws-archive' + str(year) +'.txt', skiprows=2, usecols=[1,2,3,4,5,6,7],  sep = '\t'))
         
     #return draws.iloc[::-1].values  
     return draws.values 

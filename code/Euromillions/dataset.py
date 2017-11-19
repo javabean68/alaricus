@@ -46,15 +46,15 @@ def normalize_data(data, num):
     data = to_categorical(data, num_classes=num)
     return np.reshape(data, (shape[0], shape[1] * 51))
 
-def create_dataset():
+def create_dataset(n_last_rows):
     XY = input_utilities.read_statistics(2017, 2015);
     print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' + str(XY.shape[0]))
-    return set_data(XY, XY.shape[0], 8, 5)
+    return set_data(XY, XY.shape[0], n_last_rows, n_elem_row=7)
 
-def get_last_row():
+def get_last_row(n_last_rows):
     XY = input_utilities.read_statistics(2017, 2015);
     print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' + str(XY.shape[0]))
-    return get_last_rows(XY, XY.shape[0], 8, 5)
+    return get_last_rows(XY, XY.shape[0], n_last_rows, n_elem_row=7)
 
 def get_last_rows(data, n_tot_rows, n_last_rows, n_elem_row):
     data = np.reshape(np.ravel(data), (n_tot_rows * n_elem_row, 1))    
